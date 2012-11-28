@@ -2,7 +2,6 @@
 call pathogen#infect()
 
 " Base
-set autochdir           " change to cwd
 set autoindent          " indent on next line
 set backspace=2         " allow backspace over indent, eol, start insert
 set colorcolumn=80      " color column 80
@@ -28,7 +27,7 @@ set ruler               " show the line and column number of cursor
                             " requires +cmdline_info feature
 set shiftwidth=4        " number of spaces to use for each step
                             " of autoindent
-set showbreak=+++\      " visual for showing breaks
+set showbreak=:::\      " visual for showing breaks
 set showcmd             " show partial command in last line of screen
 set showmatch           " highlight matching bracket and briefly jump
 set smartcase           " smarter case-sensitive search
@@ -45,7 +44,7 @@ set wildmode=list:longest,full " behavior to autocompletion
 "set exrc                " enables reading from .*rc files from cd
 "set linespace=3         " spacing between lines
 "set listchars=tab:▸\ ,eol:¬    " custom characters for invisible chars
-"set wrapmargin=80       " auto newline lines that need wrapping
+"set wrapmargin=10       " auto newline lines that need wrapping
                             " not good for code..
 "set secure              " prevents running autocmd; use in conjunction 
                             " with `exrc'
