@@ -1,0 +1,6 @@
+set bell-style none
+set completion-ignore-case on
+set editing-mode vi
+set expand-tilde on
+
+TAB: menu-complete
