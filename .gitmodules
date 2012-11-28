@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/vim-liquid"]
 	path = .vim/bundle/vim-liquid
 	url = git://github.com/tpope/vim-liquid.git
+[submodule ".vim/bundle/vim-tomorrow-theme"]
+	path = .vim/bundle/vim-tomorrow-theme
+	url = git://github.com/chriskempson/vim-tomorrow-theme.git
