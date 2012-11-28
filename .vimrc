@@ -102,7 +102,7 @@ if has ("gui")
     set guioptions=ce
     set mousehide
     if has ("macunix")
-        set guifont=PragmataPro\ for\ Powerline:h14
+        set guifont=PragmataPro\ for\ Powerline:h12
     else
         set guifont=PragmataPro\ for\ Powerline\ 12
     endif
