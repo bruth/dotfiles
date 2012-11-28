@@ -36,7 +36,6 @@ set smartindent         " smarter autoindenting for new line
                             " requires +smartindent feature
 set smarttab            " use shiftwidth for tabs at front of line
 set softtabstop=4       " number of sapces that tab counts for while editing
-set syntax=on           " syntax highlighting
 set tabstop=4           " width of tab character
 set wildignore=*.o,*.py?,*~ " patterns to ignore
 set wildmenu            " command-line completion enhanced mode
@@ -51,12 +50,10 @@ set wildmode=list:longest,full " behavior to autocompletion
 "set secure              " prevents running autocmd; use in conjunction 
                             " with `exrc'
 
-" Turn on indentation
-filetype plugin indent on
-
-" Set colorscheme
+filetype plugin indent on   " custom indent per filetype
 set t_Co=256
-colorscheme Tomorrow
+syntax on                   " syntax highlighting
+colorscheme Tomorrow        " colorscheme
 
 
 " Map left and right arrows to cycle through buffers
