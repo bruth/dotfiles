@@ -1,70 +1,64 @@
-" kick off pathogen
+" Kick off pathogen
 call pathogen#infect()
 
-" Buffer becomes hidden when it is abandoned
-set hid
+" Base
+set autochdir           " change to cwd
+set autoindent          " indent on next line
+set backspace=2         " allow backspace over indent, eol, start insert
+set colorcolumn=80      " color column 80
+set columns=90          " default width
+set nocompatible        " explicitly turn off compaitable mode with Vi
+set cursorbind          " move cursor to corresponding line and column
+                            " requires +cursorbind feature
+set cursorline          " hightlight the current line
+set expandtab           " replace tabs with spaces
+set nofoldenable        " turn off folding
+set hidden              " hide buffer when it is abandoned
+set nohlsearch          " hide highlighted searched text
+set ignorecase          " case-insensitive search
+set incsearch           " incremental search while typing
+set infercase           " infer the case of keyword completion
+set nojoinspaces        " turn off inserting two spaces after punctuation
+set laststatus=2        " always show the status line
+set linebreak           " wrap long lines
+set lines=30            " default height
+set number              " show line numbers
+set numberwidth=3       " set width of line numbers
+                            " requires +linebreak feature
+set preserveindent      " only indent as much as needed
+set ruler               " show the line and column number of cursor
+                            " requires +cmdline_info feature
+set shiftwidth=4        " number of spaces to use for each step
+                            " of autoindent
+set showbreak=+++\      " visual for showing breaks
+set showcmd             " show partial command in last line of screen
+set showmatch           " highlight matching bracket and briefly jump
+set smartcase           " smarter case-sensitive search
+set smartindent         " smarter autoindenting for new line
+                            " requires +smartindent feature
+set smarttab            " use shiftwidth for tabs at front of line
+set softtabstop=4       " number of sapces that tab counts for while editing
+set syntax=on           " syntax highlighting
+set tabstop=4           " width of tab character
+set wildignore=*.o,*.py?,*~ " patterns to ignore
+set wildmenu            " command-line completion enhanced mode
+set wildmode=list:longest,full " behavior to autocompletion
 
-" general
-set nocompatible
+" Optional
+"set exrc                " enables reading from .*rc files from cd
+"set linespace=3         " spacing between lines
+"set listchars=tab:▸\ ,eol:¬    " custom characters for invisible chars
+"set wrapmargin=80       " auto newline lines that need wrapping
+                            " not good for code..
+"set secure              " prevents running autocmd; use in conjunction 
+                            " with `exrc'
 
-set hidden
+" Turn on indentation
+filetype plugin indent on
 
-" Turn off error bells
-set noerrorbells
-
-" Show current position
-set ruler
-set cursorline
-set showcmd
-set showmatch
-
-" soft wrap
-set wrap
-set linebreak
-set nolist
-
-" number of columns for line numbers
-set number
-set nuw=3
-
-" Show column at 80
-set colorcolumn=80
-set linespace=3
-set numberwidth=3
-set laststatus=2
-set wildignore=*.o,*.py?,*~,*.bak
-set wildmode=list:longest
-"set statusline=%{fugitive#statusline()}%<\ %n:%f\ %m%r%y%=%-0.(\[%l\/%L\,%c%V\]\ (%P)%)
-
-" tmp, backup
-set backupdir=./.backup,.,/tmp
-set directory=./.backup,.,/tmp
-
-" search
-set nohls
-set incsearch
-set showmatch
-
-" -[ indentation ]-
-set autoindent
-set smartindent
-
-" Shift width in normal mode
-set shiftwidth=4
-" Remove N spaces at a time
-set softtabstop=4
-" Width of a tab character
-set tabstop=4
-" Use spaces instead of tabs
-set expandtab
-
-" command mode
-syntax on
-set t_Co=256
+" Set colorscheme
 colorscheme Tomorrow
 
-" -[ FileTypes ]-
-filetype plugin indent on
 
 " Map left and right arrows to cycle through buffers
 map <right> :bn<cr>
@@ -75,39 +69,18 @@ nnoremap <space> za
 " Shortcut to toggle `set list`
 nmap <leader>l :set list!<cr>
 
-" Customize invisible characters
-set listchars=tab:▸\ ,eol:¬
-
 " Powerline
 let g:Powerline_symbols = 'fancy'
 
-" vimcasts.org tidying whitespace
-function! Preserve(command)
-    " Save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    execute a:command
-    " Restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
-nmap _$ :call Preserve("%s/\\s\\+$//e")<cr>
-nmap _= :call Preserve("normal gg=G")<cr>
-
-" GUI
+" GUI specific
 if has ("gui")
-    set guioptions=ce
-    set mousehide
+    set guicursor=a:blinkon0,ci-i:hor10     " blink cursor, underline
+                                                " in insert mode
+    set guioptions=ace                      " autoselect,console dialogs
+                                                " tab pages
     if has ("macunix")
         set guifont=PragmataPro\ for\ Powerline:h12
     else
         set guifont=PragmataPro\ for\ Powerline\ 12
     endif
-    set guicursor=a:blinkon0,ci-i:hor10
-
-    " Open Marked.app for markdown files
-    nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 endif
