@@ -6,7 +6,6 @@ set autochdir           " change to cwd
 set autoindent          " indent on next line
 set backspace=2         " allow backspace over indent, eol, start insert
 set colorcolumn=80      " color column 80
-set columns=90          " default width
 set nocompatible        " explicitly turn off compaitable mode with Vi
 set cursorbind          " move cursor to corresponding line and column
                             " requires +cursorbind feature
@@ -21,7 +20,6 @@ set infercase           " infer the case of keyword completion
 set nojoinspaces        " turn off inserting two spaces after punctuation
 set laststatus=2        " always show the status line
 set linebreak           " wrap long lines
-set lines=30            " default height
 set number              " show line numbers
 set numberwidth=3       " set width of line numbers
                             " requires +linebreak feature
@@ -57,6 +55,7 @@ set wildmode=list:longest,full " behavior to autocompletion
 filetype plugin indent on
 
 " Set colorscheme
+set t_Co=256
 colorscheme Tomorrow
 
 
