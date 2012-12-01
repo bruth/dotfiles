@@ -23,6 +23,7 @@ set infercase           " infer the case of keyword completion
 set nojoinspaces        " turn off inserting two spaces after punctuation
 set laststatus=2        " always show the status line
 set linebreak           " wrap long lines
+set linespace=3         " linespacing
 set number              " show line numbers
 set numberwidth=3       " set width of line numbers
                             " requires +linebreak feature
@@ -46,7 +47,6 @@ set wildmode=list:longest,full " behavior to autocompletion
 
 " Optional
 "set exrc                " enables reading from .*rc files from cd
-"set linespace=3         " spacing between lines
 "set listchars=tab:▸\ ,eol:¬    " custom characters for invisible chars
 "set wrapmargin=10       " auto newline lines that need wrapping
                             " not good for code..
