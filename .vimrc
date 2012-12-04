@@ -36,7 +36,7 @@ set showbreak=:::\      " visual for showing breaks
 set showcmd             " show partial command in last line of screen
 set showmatch           " highlight matching bracket and briefly jump
 set smartcase           " smarter case-sensitive search
-set smartindent         " smarter autoindenting for new line
+"set smartindent         " smarter autoindenting for new line
                             " requires +smartindent feature
 set smarttab            " use shiftwidth for tabs at front of line
 set softtabstop=4       " number of sapces that tab counts for while editing
@@ -56,8 +56,15 @@ set wildmode=list:longest,full " behavior to autocompletion
 filetype plugin indent on   " custom indent per filetype
 set t_Co=256
 syntax on                   " syntax highlighting
-colorscheme Tomorrow        " colorscheme
 
+" Set color scheme according to current time of day.
+let hr = str2nr(strftime('%H'))
+if hr <= 6 || hr > 18
+    let cs = 'Tomorrow-Night'
+else
+    let cs = 'Tomorrow'
+endif
+execute 'colorscheme '.cs
 
 " Map left and right arrows to cycle through buffers
 map <right> :bn<cr>
