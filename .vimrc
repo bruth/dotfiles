@@ -17,7 +17,7 @@ set expandtab           " replace tabs with spaces
 set nofoldenable        " turn off folding
 set hidden              " hide buffer when it is abandoned
 set nohlsearch          " hide highlighted searched text
-set ignorecase          " case-insensitive search
+"set ignorecase          " case-insensitive search
 set incsearch           " incremental search while typing
 set infercase           " infer the case of keyword completion
 set nojoinspaces        " turn off inserting two spaces after punctuation
