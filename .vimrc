@@ -4,6 +4,7 @@ call pathogen#infect()
 " Base
 set autoindent          " indent on next line
 set backspace=2         " allow backspace over indent, eol, start insert
+set cindent             " indent based on C programs
 if has('colorcolumn')
     set colorcolumn=80  " color column 80
 endif
@@ -27,7 +28,6 @@ set linespace=3         " linespacing
 set number              " show line numbers
 set numberwidth=3       " set width of line numbers
                             " requires +linebreak feature
-set preserveindent      " only indent as much as needed
 set ruler               " show the line and column number of cursor
                             " requires +cmdline_info feature
 set shiftwidth=4        " number of spaces to use for each step
