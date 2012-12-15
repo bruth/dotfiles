@@ -24,7 +24,7 @@ export PS1="${GRAY}\h ${BLUE}\w${NC}\n% "
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
 
 export TERM="xterm-color"
-export PATH="$HOME/.rbenv/bin:$HOME/.rvm/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/share/npm/bin:$HOME/.rbenv/bin:$HOME/.rvm/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export PYTHON_EGG_CACHE="/tmp"
 export GREP_OPTIONS="--color=auto"
