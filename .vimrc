@@ -85,7 +85,7 @@ if has ("gui")
     set guioptions=ace                      " autoselect,console dialogs
                                                 " tab pages
     if has ("macunix")
-        set guifont=PragmataPro\ for\ Powerline:h12
+        set guifont=PragmataPro\ for\ Powerline:h14
     else
         set guifont=PragmataPro\ for\ Powerline\ 12
     endif
