@@ -1,6 +1,10 @@
 " Kick off pathogen
 call pathogen#infect()
 
+filetype plugin indent on   " custom indent per filetype
+set t_Co=256
+syntax on                   " syntax highlighting
+
 " Base
 set autoindent          " indent on next line
 set backspace=2         " allow backspace over indent, eol, start insert
@@ -53,10 +57,6 @@ set wildmode=list:longest,full " behavior to autocompletion
                             " not good for code..
 "set secure              " prevents running autocmd; use in conjunction 
                             " with `exrc'
-
-filetype plugin indent on   " custom indent per filetype
-set t_Co=256
-syntax on                   " syntax highlighting
 
 " Set color scheme according to current time of day.
 let hr = str2nr(strftime('%H'))
