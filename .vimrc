@@ -5,10 +5,11 @@ call pathogen#infect()
 set autoindent          " indent on next line
 set backspace=2         " allow backspace over indent, eol, start insert
 set cindent             " indent based on C programs
-if has('colorcolumn')
+
+if has('syntax')
     set colorcolumn=80  " color column 80
 endif
-set nocompatible        " explicitly turn off compaitable mode with Vi
+
 if has('cursorbind')
     set cursorbind      " move cursor to corresponding line and column
 endif
