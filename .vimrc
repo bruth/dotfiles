@@ -1,5 +1,37 @@
-" Kick off pathogen
-call pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Navigation
+Bundle 'kien/ctrlp.vim'
+
+" UI
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'laktek/distraction-free-writing-vim'
+Bundle 'airblade/vim-gitgutter'
+
+" Colors
+Bundle 'chriskempson/vim-tomorrow-theme'
+
+" Commands
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
+
+" Lang
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-liquid'
+Bundle 'davidoc/taskpaper.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'rodjek/vim-puppet'
+Bundle 'leshill/vim-json'
+Bundle 'plasticboy/vim-markdown'
+
 
 filetype plugin indent on   " custom indent per filetype
 set t_Co=256
@@ -15,7 +47,7 @@ if has('syntax')
 endif
 
 if has('cursorbind')
-    set cursorbind      " move cursor to corresponding line and column
+    "set cursorbind      " move cursor to corresponding line and column
 endif
                             " requires +cursorbind feature
 set cursorline          " hightlight the current line
@@ -86,8 +118,27 @@ if has ("gui")
     set guioptions=ace                      " autoselect,console dialogs
                                                 " tab pages
     if has ("macunix")
-        set guifont=PragmataPro\ for\ Powerline:h14
+        set guifont=PragmataPro\ for\ Powerline:h12
     else
-        set guifont=PragmataPro\ for\ Powerline\ 12
+        set guifont=PragmataPro\ for\ Powerline\ 10
     endif
 endif
+
+let g:fullscreen_colorscheme = "iawriter"
+let g:fullscreen_font = "Cousine:h14"
+let g:normal_colorscheme = cs
+let g:normal_font="PragmataPro for Powerline:h12"
+
+" function! DistractionFreeWriting()
+"     colorscheme iawriter
+"     set background=light
+"     set lines=40 columns=80           " size of the editable area
+"     set fuoptions=background:#00f5f6f6 " macvim specific setting for editor's background color 
+"     set guioptions-=r                  " remove right scrollbar
+"     set laststatus=0                   " don't show status line
+"     set noruler                        " don't show ruler
+"     set fullscreen                     " go to fullscreen editing mode
+"     set linebreak                      " break the lines on words
+" endfunction
+"
+" :map <leader>d :call DistractionFreeWriting()<CR>
