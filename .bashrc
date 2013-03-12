@@ -30,6 +30,8 @@ export PYTHON_EGG_CACHE="/tmp"
 export GREP_OPTIONS="--color=auto"
 export CLICOLOR=1
 
+export PROMPT_COMMAND='echo "\033]0;${PWD/#$HOME/~}\007\c"'
+
 if [ $PLATFORM == "darwin" ]; then
     export EDITOR="vim"
 
