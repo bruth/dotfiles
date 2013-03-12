@@ -16,6 +16,7 @@ Bundle 'airblade/vim-gitgutter'
 
 " Colors
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'bruth/vim-newsprint-theme'
 
 " Commands
 Bundle 'tpope/vim-surround'
@@ -128,17 +129,3 @@ let g:fullscreen_colorscheme = "iawriter"
 let g:fullscreen_font = "Cousine:h14"
 let g:normal_colorscheme = cs
 let g:normal_font="PragmataPro for Powerline:h12"
-
-" function! DistractionFreeWriting()
-"     colorscheme iawriter
-"     set background=light
-"     set lines=40 columns=80           " size of the editable area
-"     set fuoptions=background:#00f5f6f6 " macvim specific setting for editor's background color 
-"     set guioptions-=r                  " remove right scrollbar
-"     set laststatus=0                   " don't show status line
-"     set noruler                        " don't show ruler
-"     set fullscreen                     " go to fullscreen editing mode
-"     set linebreak                      " break the lines on words
-" endfunction
-"
-" :map <leader>d :call DistractionFreeWriting()<CR>
