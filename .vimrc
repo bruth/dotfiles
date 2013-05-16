@@ -129,3 +129,14 @@ let g:fullscreen_colorscheme = "iawriter"
 let g:fullscreen_font = "Cousine:h14"
 let g:normal_colorscheme = cs
 let g:normal_font="PragmataPro for Powerline:h12"
+
+" Various extensions that don't have a home..
+
+" Strip all traling whitespace
+autocmd FileType python,coffee,javascript,html,css,scss autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Autoreload vimrc
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
