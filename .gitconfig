@@ -10,15 +10,15 @@
     email = b@devel.io
 
 [alias]
-    s = status
+    br = branch
     st = status
     a = !git status . && git status
     au = !git status -u && git status
     aa = !git status . && git status -u && git status
-    c = commit
     ci = commit
     co = checkout
-    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
-    ll = log --stat --abbrev-commit
-    d = diff --color-words
-    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+    graph = log --graph --full-history --all --color \
+        --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+
+[merge]
+    defaultToUpstream = true
