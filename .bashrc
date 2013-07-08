@@ -20,28 +20,26 @@ export LIGHT_CYAN='\[\e[1;36m\]'
 export LIGHT_GRAY='\[\e[0;37m\]'
 export WHITE='\[\e[1;37m\]'
 
+export PATH="/usr/local/share/npm/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
 export PS1="${GRAY}\h ${BLUE}\w${NC}\n% " 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
 
 export TERM="xterm-color"
-export PATH="/usr/local/share/npm/bin:$HOME/.rbenv/bin:$HOME/.rvm/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export EDITOR="vim"
+
+if [ $PLATFORM == "darwin" ]; then
+    export GOPATH=$HOME/Code/go
+    export CC=clang
+    export CXX=clang
+    export FFLAGS=-ff2c
+fi
 
 export PYTHON_EGG_CACHE="/tmp"
 export GREP_OPTIONS="--color=auto"
 export CLICOLOR=1
 
-export PROMPT_COMMAND='echo "\033]0;${PWD/#$HOME/~}\007\c"'
-
-if [ $PLATFORM == "darwin" ]; then
-    export EDITOR="vim"
-    export GOPATH=$HOME/Code/go
-
-    export CC=clang
-    export CXX=clang
-    export FFLAGS=-ff2c
-else
-    export EDITOR="vim"
-fi
+#export PROMPT_COMMAND='echo "\033]0;${PWD/#$HOME/~}\007\c"'
 
 alias ls="ls -G"
 alias tmux="TERM=screen-256color-bce tmux"
@@ -55,16 +53,18 @@ if [ -f $VIRTUALENV_WRAPPER ]; then
     source $VIRTUALENV_WRAPPER
 fi
 
-# Initialize RVM
-if [ -f $HOME/.rvm/scripts/rvm ]; then
-    . $HOME/.rvm/scripts/rvm
-fi
-
 # bash completion
 if [[ -z brew && $(brew --prefix)/etc/bash_completion ]]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# load additional extras if available. this generally contains platform
+# specific components
 if [ -f $HOME/.bashrc-extras ]; then
     . $HOME/.bashrc-extras
+fi
+
+# convenience functions
+if [ -f $HOME/.functions ]; then
+    . $HOME/.functions
 fi
