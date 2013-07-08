@@ -8,11 +8,12 @@ Bundle 'gmarik/vundle'
 
 " Navigation
 Bundle 'kien/ctrlp.vim'
+Bundle 'markwu/bufkill.vim'
 
 " UI
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'laktek/distraction-free-writing-vim'
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'airblade/vim-gitgutter'
 
 " Colors
 Bundle 'chriskempson/vim-tomorrow-theme'
@@ -32,6 +33,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'rodjek/vim-puppet'
 Bundle 'leshill/vim-json'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'jnwhiteh/vim-golang'
 
 
 filetype plugin indent on   " custom indent per filetype
