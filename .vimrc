@@ -130,6 +130,8 @@ let g:fullscreen_font = "Cousine:h14"
 let g:normal_colorscheme = cs
 let g:normal_font="PragmataPro for Powerline:h12"
 
+let g:vim_markdown_folding_disabled=1
+
 " Various extensions that don't have a home..
 
 " Strip all traling whitespace
