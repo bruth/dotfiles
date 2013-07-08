@@ -135,6 +135,12 @@ let g:normal_font="PragmataPro for Powerline:h12"
 
 let g:vim_markdown_folding_disabled=1
 
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|data\|log\|tmp$',
+    \ 'file': '\.so$\|\.dat$\|\.js\$|\.pyc$'
+\ }
+
 " Various extensions that don't have a home..
 
 " Strip all traling whitespace
