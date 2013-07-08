@@ -145,9 +145,3 @@ let g:ctrlp_custom_ignore = {
 
 " Strip all traling whitespace
 autocmd FileType python,coffee,javascript,html,css,scss autocmd BufWritePre <buffer> :%s/\s\+$//e
-
-" Autoreload vimrc
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
