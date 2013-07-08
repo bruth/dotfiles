@@ -34,12 +34,7 @@ export PROMPT_COMMAND='echo "\033]0;${PWD/#$HOME/~}\007\c"'
 
 if [ $PLATFORM == "darwin" ]; then
     export EDITOR="vim"
-
-    # Go
-    export GOROOT=`brew --cellar go`
-    export GOOS=darwin
-    export GOARCH=amd64
-    export GOBIN=/usr/local/bin
+    export GOPATH=$HOME/Code/go
 
     export CC=clang
     export CXX=clang
