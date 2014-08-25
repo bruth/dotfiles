@@ -33,6 +33,8 @@ if [ $PLATFORM == "darwin" ]; then
     export CC=clang
     export CXX=clang
     export FFLAGS=-ff2c
+    export CFLAGS=-Qunused-arguments
+    export CPPFLAGS=-Qunused-arguments
 fi
 
 export PYTHON_EGG_CACHE="/tmp"
