@@ -39,7 +39,7 @@ export PYTHON_EGG_CACHE="/tmp"
 export GREP_OPTIONS="--color=auto"
 export CLICOLOR=1
 
-#export PROMPT_COMMAND='echo "\033]0;${PWD/#$HOME/~}\007\c"'
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
 alias ls="ls -G"
 alias tmux="TERM=screen-256color-bce tmux"
