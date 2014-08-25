@@ -48,8 +48,6 @@ set cindent             " indent based on C programs
 
 if has('+colorcolumn')
     set colorcolumn=80  " color column 80
-else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
 if has('cursorbind')
@@ -67,7 +65,7 @@ set infercase           " infer the case of keyword completion
 set nojoinspaces        " turn off inserting two spaces after punctuation
 set laststatus=2        " always show the status line
 set linebreak           " wrap long lines
-set linespace=3         " linespacing
+set linespace=0         " linespacing
 set number              " show line numbers
 set numberwidth=3       " set width of line numbers
                             " requires +linebreak feature
@@ -84,7 +82,8 @@ set smartcase           " smarter case-sensitive search
 set smarttab            " use shiftwidth for tabs at front of line
 set softtabstop=4       " number of sapces that tab counts for while editing
 set tabstop=4           " width of tab character
-set wildignore=*.o,*.py?,*~ " patterns to ignore
+set title               " changes the terminal's title
+set wildignore=*.o,*.py?,*.sw?,*.bak,*~ " patterns to ignore
 set wildmenu            " command-line completion enhanced mode
 set wildmode=list:longest,full " behavior to autocompletion
 
@@ -135,15 +134,18 @@ let g:fullscreen_font = "Cousine:h14"
 let g:normal_colorscheme = cs
 let g:normal_font="PragmataPro for Powerline:h12"
 
+" folding in Markdown files is terrrible
 let g:vim_markdown_folding_disabled=1
 
-" Sane Ignore For ctrlp
+" ctrlp - ignores
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$\|data\|log\|tmp$',
-    \ 'file': '\.so$\|\.dat$\|\.js\$|\.pyc$'
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|data\|log\|tmp\|node_modules',
+    \ 'file': '\.so$\|\.dat$\|\.pyc$\|\.DS_Store$'
 \ }
 
 " Various extensions that don't have a home..
 
 " Strip all traling whitespace
-autocmd FileType python,coffee,javascript,html,css,scss autocmd BufWritePre <buffer> :%s/\s\+$//e
+if has('autocmd')
+    autocmd FileType python,coffee,javascript,html,css,scss,md,go autocmd BufWritePre <buffer> :%s/\s\+$//e
+endif
