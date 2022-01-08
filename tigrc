@@ -1,0 +1,4 @@
+bind generic D !git commit -s
+bind generic A !git commit -s --amend
+
+set status-show-untracked-files = yes

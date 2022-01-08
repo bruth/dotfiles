@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tigrc: tigrc
+    ~/.tmux.conf: tmux.conf
+    ~/.gitconfig: gitconfig
+    ~/.inputrc: inputrc
+    ~/.bashrc: bashrc
+    ~/.config/:
+      glob: true
+      path: config/*
+    ~/.local/share/nvim/site/autoload/plug.vim:
+      create: true
+      path: plug.vim
+
+- shell:
+  - [./setup.sh]

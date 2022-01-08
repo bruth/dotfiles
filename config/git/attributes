@@ -1,0 +1,2 @@
+# Using the CSV diffing algorithm
+*.csv diff=csv
