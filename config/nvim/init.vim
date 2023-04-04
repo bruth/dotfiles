@@ -10,6 +10,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'bruth/vim-newsprint-theme'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'zaki/zazen'
+Plug 'arcticicestudio/nord-vim'
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
+Plug 'jjo/vim-cue'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -18,7 +23,7 @@ filetype plugin indent on
 set termguicolors
 set background=light
 
-colorscheme newsprint
+colorscheme nord
 
 set number
 set encoding=utf-8
@@ -97,6 +102,7 @@ let g:coc_global_extensions = [
       \ 'coc-css',
       \ 'coc-html',
       \ 'coc-yank',
+      \ 'coc-deno',
       \ ]
 
 " from readme
@@ -223,3 +229,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " vim-prettier
 " Run on save
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Markdown
+let g:markdown_fenced_languages = ['go', 'python', 'javascript', 'typescript']
+
+" Trouble
+lua << EOF
+  require('trouble').setup {
+  }
+EOF
