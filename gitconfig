@@ -1,25 +1,34 @@
 [core]
-    pager = less -r
+  pager = less -r
 
 [color]
-    ui = auto
-    interactive = auto
+  ui = auto
+  interactive = auto
 
 [user]
-    name = Byron Ruth
-    email = b@devel.io
+  name = Byron Ruth
+	email = byron@nats.io
+	signingkey = 5316043C3A9BA2E7
 
 [alias]
-    br = branch
-    st = status
-    a = !git status . && git status
-    au = !git status -u && git status
-    aa = !git status . && git status -u && git status
-    ci = commit
-    co = checkout
-    graph = log --graph --full-history --all --color \
-        --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+  br = branch
+  st = status
+  a = !git status . && git status
+  au = !git status -u && git status
+  aa = !git status . && git status -u && git status
+  ci = commit
+  co = checkout
+  graph = log --graph --full-history --all --color \
+      --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [merge]
-    defaultToUpstream = true
+  defaultToUpstream = true
+
+[init]
+	defaultBranch = main
+
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
